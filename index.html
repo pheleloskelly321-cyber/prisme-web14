@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Menu - L'Expérience Prisme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dcpcbglsw/image/upload/v1770483869/udmcteibqa3rhd1gllhp.png">
+    <style>
+        :root {
+            --gold: #f39c12;
+            --gold-light: #f1c40f;
+            --dark-bg: #0f0f0f;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #2c3e50 0%, #0f0f0f 100%);
+            z-index: -1;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navbar ak Logo WONN */
+        nav {
+            padding: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            height: 70px;
+            width: 70px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            filter: drop-shadow(0 0 10px rgba(243, 156, 18, 0.3));
+            transition: 0.3s ease;
+        }
+
+        .logo:hover { transform: scale(1.1); border-color: #fff; }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 120px;
+            gap: 40px;
+        }
+
+        .hero-text { flex: 1.2; animation: fadeInLeft 1s ease; }
+        
+        .hero-text h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p { font-size: 1.2rem; margin-bottom: 40px; color: #ccc; max-width: 550px; }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            color: #000 !important;
+            padding: 22px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-download:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.6); 
+        }
+
+        .hero-image { flex: 0.8; display: flex; justify-content: center; animation: fadeInRight 1s ease; }
+
+        .phone {
+            width: 300px;
+            height: 620px;
+            background: #222;
+            border: 12px solid #333;
+            border-radius: 50px;
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .phone img { width: 100%; height: 100%; object-fit: cover; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 100px 0;
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); }
+
+        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 25px; }
+
+        @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+
+        @media (max-width: 992px) {
+            header { flex-direction: column; text-align: center; padding-top: 150px; }
+            .hero-text h1 { font-size: 3rem; }
+            .phone { width: 250px; height: 520px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blur"></div>
+
+    <div class="container">
+        <nav>
+            <img src="https://res.cloudinary.com/dcpcbglsw/image/upload/v1770483869/udmcteibqa3rhd1gllhp.png" alt="Prisme Logo" class="logo">
+        </nav>
+
+        <header>
+            <div class="hero-text">
+                <h1>Le Menu <br><span style="color: #fff;">By Prisme</span></h1>
+                <p>L'excellence culinaire au bout des doigts. Commandez instantanément et gérez vos plats préférés avec l'application la plus fluide du marché.</p>
+                
+                <a href="https://www.dropbox.com/scl/fi/e7jg42f1lgt3hxzhkyr8e/lemenu.apk?rlkey=6dyt6km5bn41ls82k2svu87xc&st=e11tylev&dl=1" class="btn-download">
+                    <i class="fab fa-android"></i> Télécharger l'App
+                </a>
+                
+                <p style="font-size: 0.8rem; margin-top: 15px; color: var(--gold-light); font-weight: 600;">
+                    <i class="fas fa-check-circle"></i> Installation directe et sécurisée
+                </p>
+            </div>
+
+            <div class="hero-image">
+                <div class="phone">
+                    <img src="https://res.cloudinary.com/dcpcbglsw/image/upload/v1770510980/1770510517992_2_lksfzn.png" alt="Le Menu App Preview">
+                </div>
+            </div>
+        </header>
+
+        <section class="features">
+            <div class="card">
+                <i class="fas fa-utensils"></i>
+                <h3>Menu Premium</h3>
+                <p>Une présentation élégante de vos plats avec des visuels haute définition pour une expérience immersive.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bolt"></i>
+                <h3>Vitesse Éclair</h3>
+                <p>Commandez en un clic. L'interface optimisée de Prisme garantit une rapidité d'exécution sans précédent.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Sécurité & Suivi</h3>
+                <p>Suivez votre commande en temps réel et profitez d'un système de gestion sécurisé et fiable.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 60px; color: #666; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p>&copy; 2026 Projet Prisme | Développé avec passion par Kelly</p>
+    </footer>
+</body>
+</html>
